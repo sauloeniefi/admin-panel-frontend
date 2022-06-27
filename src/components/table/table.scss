@@ -1,0 +1,9 @@
+.table {
+
+    .tableRow {
+        &:hover{
+            background-color: rgb(243, 201, 152);
+            cursor: pointer;
+        }
+    }
+}
