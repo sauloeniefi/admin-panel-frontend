@@ -15,7 +15,7 @@ const List = () => {
       const content = await response.json();
       setPlayers(content);
     })();
-  });
+  },[]);
 
   return (
     <div className="home">

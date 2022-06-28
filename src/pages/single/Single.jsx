@@ -1,5 +1,6 @@
-import React, { useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import axios from "axios";
 import "./single.scss";
 
 import Sidebar from "../../components/sidebar/Sidebar";
@@ -15,17 +16,26 @@ const Single = (props) => {
   //   console.log("Location from all players", location);
   // }, [location]);
 
-  const [playerDataById, setPlayerDataById] = useState([]);
+  const [playerDataById, setPlayerDataById] = useState({});
 
 
   useEffect(() => {
-    (async () => {
-      const response = await fetch(`http://192.168.163.128:3003/api/players/${location.state.playerData.ID}`);
-      const content = await response.json();
-      setPlayerDataById(content);
-      console.log(playerDataById)
-    })();
-  },[location]);
+    const fetchPlayer = async () => {
+      const response = await fetch(
+        `http://192.168.163.128:3003/api/players/${location.state.playerData.Id}`
+      );
+      const playerData = await response.json();
+      setPlayerDataById(playerData);
+    };
+    fetchPlayer();
+  },);
+
+
+  function test() {
+    document.getElementById('name').defaultValue=playerDataById.Name;
+  }
+
+ 
 
   return (
     <div className="single">
@@ -49,7 +59,7 @@ const Single = (props) => {
             <div>
               <TextField
                 required
-                id="outlined-required"
+                id="name"
                 label="Name"
                 defaultValue={playerDataById.Name}
               />
@@ -77,7 +87,7 @@ const Single = (props) => {
                 required
                 id="outlined-required"
                 label="Level"
-                defaultValue={playerDataById.LEVEL}
+                defaultValue={playerDataById.Level}
               />
 
               <TextField

@@ -63,31 +63,31 @@ const TableC = (props) => {
         </TableHead>
         <TableBody>
           {props.dados.map((player, index) => (
-            <TableRow key={player.ID} className="tableRow">
+            <TableRow key={player.Id} className="tableRow">
               <TableCell component="th" scope="row">
-                {player.ID}
+                {player.Id}
               </TableCell>
               <TableCell className="tableCell" component="th">
-                {player.NAME}
+                {player.Name}
               </TableCell>
               <TableCell className="tableCell" align="right">
-                {player.PASSWORD}
+                {player.Password}
               </TableCell>
               <TableCell className="tableCell" align="right">
-                {player.LEVEL}
+                {player.Level}
               </TableCell>
               <TableCell className="tableCell" align="right">
-                {player.GOLD}
+                {player.Gold}
               </TableCell>
               <TableCell className="tableCell" align="right">
-                {player.COINS}
+                {player.Coins}
               </TableCell>
               <TableCell className="tableCell" align="right">
-                {checkCargo(player.ACCESS)}
+                {checkCargo(player.Access)}
               </TableCell>
 
               <TableCell className="tableCell" align="right">
-                <Link to={`/players/${player.ID}`} state={{from:'all players', playerData:player}}>Edit</Link>
+                <Link to={`/players/${player.Id}`} state={{from:'all players', playerData:player}}>Edit</Link>
               </TableCell>
             </TableRow>
           ))}
