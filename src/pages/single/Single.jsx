@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import axios from "axios";
 import "./single.scss";
 
 import Sidebar from "../../components/sidebar/Sidebar";
@@ -11,6 +10,8 @@ import TextField from "@mui/material/TextField";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import InputLabel from "@mui/material/InputLabel";
+
+import Container from '@mui/material/Container';
 
 const Single = (props) => {
   const location = useLocation();
@@ -334,9 +335,9 @@ const Single = (props) => {
                   defaultValue={formatDate(location.state.playerData.BanTime)}
                 />
               </div>
+              <div className="editButton">Salvar</div>
             </div>
           </Box>
-          <div className="editButton">Salvar</div>
         </div>
       </div>
     </div>
