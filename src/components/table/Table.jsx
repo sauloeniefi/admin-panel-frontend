@@ -71,7 +71,7 @@ const TableC = (props) => {
                 {player.Name}
               </TableCell>
               <TableCell className="tableCell" align="right">
-                {player.Password}
+                ********
               </TableCell>
               <TableCell className="tableCell" align="right">
                 {player.Level}
