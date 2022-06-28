@@ -63,11 +63,11 @@ const TableC = (props) => {
         </TableHead>
         <TableBody>
           {props.dados.map((player, index) => (
-            <TableRow key={player.Id} className="tableRow">
+            <TableRow key={player.id} className="tableRow">
               <TableCell component="th" scope="row">
-                {player.Id}
+                {player.id}
               </TableCell>
-              <TableCell className="tableCell" component="th">
+              <TableCell className="tableCell" component="th" align="right">
                 {player.Name}
               </TableCell>
               <TableCell className="tableCell" align="right">
@@ -87,7 +87,7 @@ const TableC = (props) => {
               </TableCell>
 
               <TableCell className="tableCell" align="right">
-                <Link to={`/players/${player.Id}`} state={{from:'all players', playerData:player}}>Edit</Link>
+                <Link to={`/players/${player.id}`} state={{from:'all players', playerData:player}}>Edit</Link>
               </TableCell>
             </TableRow>
           ))}
